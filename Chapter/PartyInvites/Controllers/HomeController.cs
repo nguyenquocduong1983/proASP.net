@@ -15,6 +15,10 @@ namespace PartyInvites.Controllers
             ViewBag.multy = DateTime.Now;
             return View();
         }
+        public ActionResult RsvpForm()
+        {
+            return View();
+        }
 
     }
 }
