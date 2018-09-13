@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PartyInvites.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,10 +16,18 @@ namespace PartyInvites.Controllers
             ViewBag.multy = DateTime.Now;
             return View();
         }
+        //get
+        [HttpGet]
         public ActionResult RsvpForm()
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult RsvpForm(GuestResponse guestResponse)
+        {
+            return View("thanks",guestResponse);
+        }
+
 
     }
 }

@@ -11,8 +11,18 @@
     <title>RsvpForm</title>
 </head>
 <body>
-    @using (Html.BeginForm("RsvpForm","Home", FormMethod.Post))
+    @using (Html.BeginForm("RsvpForm", "Home", FormMethod.Post))
     {
+        <p>your name: @Html.TextBoxFor(model => model.Name)</p>
+        <p>Mail: @Html.TextBoxFor(model => model.Email)</p>
+        <p>Phone: @Html.TextBoxFor(model => model.Phone)</p>
+        <p>
+            Will you attened?
+            @Html.DropDownListFor(model => model.WillAttend, new[] { new SelectListItem() {  Text="No, I can't come", Value =bool.FalseString},
+            new SelectListItem() {  Text="yes, I'll be there", Value =bool.TrueString}}, "choose an option")
+       
+        </p>
+        <input type="submit" value="Submit RSVP" name="" />
 
     }
 </body>
