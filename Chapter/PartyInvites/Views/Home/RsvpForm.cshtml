@@ -9,10 +9,12 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>RsvpForm</title>
+    <link href="~/Content/site.css" rel="stylesheet" />
 </head>
 <body>
     @using (Html.BeginForm("RsvpForm", "Home", FormMethod.Post))
     {
+        @Html.ValidationSummary()
         <p>your name: @Html.TextBoxFor(model => model.Name)</p>
         <p>Mail: @Html.TextBoxFor(model => model.Email)</p>
         <p>Phone: @Html.TextBoxFor(model => model.Phone)</p>
